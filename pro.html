@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html ng-app="todoApp">
+
+<head>
+
+ <title>TO DO List</title>
+
+ <link href="bootstrap.css" rel="stylesheet" />
+
+ <link href="bootstrap-theme.css" rel="stylesheet" />
+
+ <script src="C:\Users\yeshwanthkatta\Downloads\d\angular.js"></script>
+
+ 
+<div ng-app="app" ng-controller="customersCtrl">
+				<ul>
+				  <li ng-repeat="x in names">
+				    {{ x.Name + ', ' + x.Country }}
+				  </li>
+				</ul>
+
+				</div>
+
+				<script>
+				var myApp = angular.module('app', []);
+				myApp.controller('customersCtrl', function($scope, $http) {
+				    $http.get("C:\Users\yeshwanthkatta\Downloads\d\data.json")
+				    .success(function(response) {$scope.names = response.records;});
+				});
+				</script>
+ 
+</body>
+
+</html><!DOCTYPE html>
+
